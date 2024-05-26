@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Login1Component {
 
-  //標題
+  //標題在這
   title = "新增"
 
   //使用者欄位 用物件管控
