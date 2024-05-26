@@ -1,0 +1,56 @@
+<p [ngStyle]="{'font-size':fontSize+'px'}">文章列表</p>
+<button (click)="add()">放大變色</button>
+
+<p [ngClass]="{'Red':isRed}">關注</p>
+
+<button (click)="changePopular()">熱門文章</button>
+<button (click)="changeNormal()">一般文章</button>
+
+<div *ngIf="isPopular">
+  <p>熱門文章列表</p>
+
+  <table border="1">
+    <tr>
+      <th>標題</th>
+      <th>內容</th>
+    </tr>
+    <tr *ngFor="let item of popularArticles">
+      <td>{{item.title}}</td>
+      <td>{{item.content}}</td>
+    </tr>
+  </table>
+</div>
+
+<button (click)="addNewArticle()">新增文章</button>
+
+<div *ngIf="!isPopular">
+  <p>一般文章列表</p>
+
+  <table border="1">
+    <tr>
+      <th>標題</th>
+      <th>內容</th>
+    </tr>
+    <tr *ngFor="let item of normalArticles">
+      <td>{{item.title}}</td>
+      <td>{{item.content}}</td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+<div *ngIf="isPopular";else myElse>
+<p>評論</p>
+</div>
+<div>
+  <ng-template #myElse>
+    <p>分享</p>
+  </ng-template>
+</div>
+<div [ngSwitch]="score">
+<p *ngSwitchCase="10">一般</p>
+<p *ngSwitchCase="50">一般</p>
+<p *ngSwitchCase="100">一般</p>
+<p *ngSwitchDefault>未評分</p>
+</div>

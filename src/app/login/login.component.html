@@ -1,0 +1,14 @@
+<p>login works!</p>
+<h2>{{title}}</h2>
+<p>{{role==="主管"?"主管登入":"一般使用者"}}</p>
+<div>
+  <p>帳號</p>
+  <input [placeholder]="account">
+  <p>密碼</p>
+  <input [placeholder]="password">
+<p></p>
+<button (click)="comfirm()">確認送出</button>
+</div>
+
+<!-- <p>登入人數:{{memberCnt}}</p> -->
+<!-- <input [(ngModel)] ="memberCnt"> -->
