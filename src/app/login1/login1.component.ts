@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login1.component.css']
 })
 export class Login1Component {
+
+  //標題
   title = "新增"
 
-  //使用者欄位
+  //使用者欄位 用物件管控
   user = {
     account:"",
     password:""
@@ -20,7 +22,7 @@ export class Login1Component {
     password:""
   };
 
-  //顯示使用者清單  //使用:為指定屬性類型
+  //顯示使用者清單  //使用:為指定屬性類型  //很多使用者物件的集合
   showUserList : {
     account:string,
     password:string
@@ -29,8 +31,8 @@ export class Login1Component {
   //帳號是否可以輸入
   isDisable = false;
 
-   //帳號是否重複
-   isDuplicate = false;
+  //帳號是否重複
+  isDuplicate = false;
 
   //送出
   submit(){  //如果其中一空值false !變true
